@@ -1,0 +1,11 @@
+{
+  "_comment": "Living Spec write-back — ENFORCE mode (blocks the stop once per interval and tells Claude to write back before finishing). Merge this 'hooks' block into your ~/.claude/settings.json or .claude/settings.json. Copy hooks/livingspec-writeback-hook.sh to ~/.claude/hooks/ and chmod +x it. Optional: set LIVINGSPEC_WRITEBACK_INTERVAL_MIN.",
+  "hooks": {
+    "Stop": [
+      {
+        "type": "command",
+        "command": "LIVINGSPEC_WRITEBACK_MODE=enforce \"$HOME/.claude/hooks/livingspec-writeback-hook.sh\""
+      }
+    ]
+  }
+}

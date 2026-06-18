@@ -1,0 +1,11 @@
+{
+  "_comment": "Living Spec write-back — REMINDER mode (non-blocking). Merge this 'hooks' block into your ~/.claude/settings.json (user scope) or .claude/settings.json (project scope). Copy hooks/livingspec-writeback-hook.sh to ~/.claude/hooks/ and chmod +x it. Optional: set LIVINGSPEC_WRITEBACK_INTERVAL_MIN.",
+  "hooks": {
+    "Stop": [
+      {
+        "type": "command",
+        "command": "\"$HOME/.claude/hooks/livingspec-writeback-hook.sh\""
+      }
+    ]
+  }
+}
