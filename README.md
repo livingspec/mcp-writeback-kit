@@ -25,6 +25,13 @@ automatically.
 Prereq: the `livingspec` MCP connected (see the "Connect Claude Code to Living
 Spec" guide). The hook also needs `jq` and `bash`.
 
+Get the kit (the install steps below run from inside it):
+
+```bash
+git clone https://github.com/livingspec/mcp-writeback-kit.git
+cd mcp-writeback-kit
+```
+
 ### 1. The skill (recommended)
 
 Copy the skill into your skills directory:
