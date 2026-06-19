@@ -52,10 +52,10 @@ say so and skip the write** — don't manufacture an entry.
    - Add the entry with `UpsertSection` (idempotent — ideal for a dated
      "Progress log" section) or `AppendToPage` (for a fresh dated entry).
    - **Do not merge.** Leave it in the Branches tab for a human to review.
-5. **Mark the write-back done** so the reminder hook goes quiet for a while:
-   create `~/.claude/livingspec/` if needed and write the current epoch seconds
-   to `~/.claude/livingspec/last-writeback` (e.g. `date +%s > ~/.claude/livingspec/last-writeback`).
-   Best-effort — skip it if you can't run shell commands.
+5. **Mark the write-back done** so the reminder hooks go quiet for a while.
+   Best-effort (skip if you can't run shell): write the current epoch seconds to
+   the marker for whichever client you're in — covering both is harmless:
+   `mkdir -p ~/.claude/livingspec ~/.cursor/livingspec; date +%s | tee ~/.claude/livingspec/last-writeback ~/.cursor/livingspec/last-writeback >/dev/null`
 6. **Report** the document, page, branch, and a one-line summary of what you
    wrote.
 

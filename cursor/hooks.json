@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "hooks": {
+    "afterMCPExecution": [
+      { "command": "$HOME/.cursor/hooks/livingspec-mark-usage.sh" }
+    ],
+    "stop": [
+      {
+        "command": "$HOME/.cursor/hooks/livingspec-writeback-stop.sh",
+        "loop_limit": 3
+      }
+    ]
+  }
+}
