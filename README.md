@@ -1,11 +1,36 @@
 # Living Spec write-back kit
 
-Tools to help people **remember to write their work back to Living Spec** when
-using an AI coding agent with the Living Spec MCP. The problem this solves:
-decisions and progress end up in the chat and never make it into the spec.
+Tools for working a spec with an AI coding agent over the Living Spec MCP, across
+two phases of a spec's life:
+
+- **Authoring** — *writing the spec in the first place*, in the customer's own
+  template and voice. See [`authoring/`](./authoring/).
+- **Write-back** — *keeping it current* as work happens, so decisions and
+  progress don't end up stranded in the chat. The rest of this README.
+
+The two are independent — use either alone. The bulk of this kit is write-back,
+because "remember to record what just happened" is the harder problem: a prompt
+asking the agent to remember loses every race against the actual task, so it
+needs a hook, not just an instruction.
+
+## Authoring: writing the spec
+
+Grounding beats prompting. A clever prompt is the small lever; the thing a raw
+LLM can't match is drafting in the customer's *own* house style, learned from
+their existing specs.
+
+| File | What it is |
+|---|---|
+| [`authoring/spec-writer-prompt.md`](./authoring/spec-writer-prompt.md) | A reusable prompt that forces the parts people skip — explicit non-goals, checkable acceptance criteria, surfaced open questions. Paste it, drop it in your rules, or save it as a `/spec-writer` command. |
+| [`authoring/voice-and-template.md`](./authoring/voice-and-template.md) | How to make a draft match the customer's template (structure) and voice (style) by grounding it in their existing Living Spec pages — a cheap prompt-only version that works today, and the better retrieval-based version. |
+
+## Write-back: keeping the spec current
+
+The problem this solves: decisions and progress end up in the chat and never make
+it into the spec.
 
 There's no single right form — different users want different amounts of
-nudging. So this kit ships three layers; use any or all.
+nudging. So this layer ships several pieces; use any or all.
 
 | Layer | What it is | Reminds you? | Works in |
 |---|---|---|---|
