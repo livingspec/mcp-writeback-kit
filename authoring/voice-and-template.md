@@ -59,6 +59,29 @@ Rough shape:
 - Pre-fill the draft against both; show the user which specs it learned from so
   the grounding is inspectable, not magic.
 
+## After drafting: a light de-AI pass
+
+Grounding gets the voice close, but a first draft still leaks the usual AI
+tells — filler ("it is important to note"), three-beat fragments, "not just X but
+Y", reflexive corporate adjectives. A spec full of those reads as
+machine-generated no matter how well it's structured, so it's worth one cleanup
+pass before the spec goes to review:
+
+```markdown
+Do one pass over the draft to strip AI tells: filler phrases, three-beat
+fragments, "not just X but Y" constructions, and reflexive adjectives. Keep the
+spec's register and the customer's voice — do NOT rewrite toward a punchy,
+spoken, or opinionated tone. The goal is to remove the machine seams, not to
+change what kind of document this is.
+```
+
+The constraint in the second sentence is the whole point. General-purpose
+"humanize this" tooling (e.g. the `humanize-writing` skill's `pattern-disruptor`
+and `credibility-test` modes) is built for exactly this de-tell pass — but its
+voice-shaping modes (`make-it-hit`, `voice-shaper`) optimize for spoken,
+opinionated prose, which is the wrong register for a spec. Use the tell-stripping
+modes; skip the voice-shaping ones.
+
 ## What not to do
 
 - **Don't ask for "professional / polished / clean" tone.** That's how you get
