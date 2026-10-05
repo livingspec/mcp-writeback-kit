@@ -27,4 +27,7 @@ spec as the source of truth — don't let decisions live only in this chat.
 - Write the spec's voice — what changed, why, and what's next — not a transcript.
   Keep it tight. Writes go to a branch for review; never merge automatically.
 - If nothing meaningful changed, don't write anything.
+- When reading the spec for context, `GetPage` with `format: "okf"` says who
+  wrote a page and who reviewed it. Treat `status: draft`, or a page with no
+  human in `verified`, as a proposal, not a settled decision.
 ```
