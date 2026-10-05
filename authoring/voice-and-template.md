@@ -24,7 +24,9 @@ structure and mimic the voice. Paste this alongside the
 
 ```markdown
 Before drafting, study the example spec(s) I point you to (use the livingspec
-MCP — GetPage / ListPages — to read them). Extract two things and state them
+MCP — GetPage with format: "okf" / ListPages — to read them). Skip any example
+whose `okf.generated.by` is not a `human:` actor: that page was written by an
+agent, and its voice is a model's, not ours. Extract two things and state them
 back to me in 3–4 lines before you write:
 
 - Template: the section order and what each section contains.
@@ -88,6 +90,13 @@ modes; skip the voice-shaping ones.
   the generic AI voice. The customer's voice is whatever their existing specs
   are — even if that's terse, informal, or idiosyncratic. Match *them*, not an
   abstract ideal.
+- **Don't ground on agent-written pages.** Once agents write back to the spec,
+  some of the customer's pages are model output. Learn the voice from those and
+  every draft is grounded on the last draft, drifting further from how the
+  customer actually writes. `GetPage` with `format: "okf"` reports
+  `generated.by`: use pages a `human:` wrote, and prefer ones a human also
+  `verified`. Agent-written pages are still fine for *template*, since
+  structure that survived a human merge is structure the customer accepted.
 - **Don't ground on one weird outlier.** If you're picking a template page by
   hand, pick a representative one (or two or three), not the longest or the
   newest by reflex.
