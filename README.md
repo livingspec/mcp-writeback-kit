@@ -153,3 +153,7 @@ Config (set as env in the hook `command`, or your shell):
 Remove the `Stop` block from your settings, delete
 `~/.claude/hooks/livingspec-writeback-hook.sh`, and (optionally) clear
 `~/.claude/livingspec/`.
+
+## License
+
+MIT. See [LICENSE](./LICENSE).
